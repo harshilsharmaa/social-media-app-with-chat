@@ -19,7 +19,10 @@ import Search from './components/Search/Search';
 import NotFound from './components/NotFound/NotFound';
 
 
+
+
 function App() {
+
 
   const dispatch = useDispatch();
 
@@ -36,7 +39,6 @@ function App() {
         isAuthenticate && <Header/>
       }
 
-
       <Routes>
         <Route path='/' element={isAuthenticate? <Home/> : <Login/>}></Route>
         <Route path='/register'  element={isAuthenticate? <Account/> :<Register/>}></Route>
@@ -49,11 +51,13 @@ function App() {
         <Route path='/password/reset/:token' element={<ResetPassword/>}></Route>
         <Route path='/user/:id' element={isAuthenticate? <UserProfile/> : <Login/>}></Route>
         <Route path='search' element={isAuthenticate? <Search/> : <Login/>}></Route>
-        <Route path='messanger' element={isAuthenticate? <Messanger/> : <Login/>}></Route>
+        <Route path='messanger' element={isAuthenticate? <Messanger /> : <Login/>}></Route>
         <Route path='*' element={<NotFound/>}></Route>
 
 
       </Routes>
+
+
 
     </Router>
   )

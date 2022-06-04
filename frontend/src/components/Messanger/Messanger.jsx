@@ -6,10 +6,11 @@ import {useSelector, useDispatch} from 'react-redux'
 import axios from 'axios'
 import io from 'socket.io-client'
 
-const socket = io.connect('http://localhost:5000');
+// const socket = io.connect('http://localhost:5000');
+const socket = io.connect(process.env.REACT_APP_SOCKET_SERVER_URL);
 
 const Messanger = () => {
-    
+
     const { user, loading: userLoading, } = useSelector(state => state.user);
     const [currentChat, setCurrentChat] = useState(null); 
     const [messages, setMessages] = useState([])
@@ -127,14 +128,14 @@ const Messanger = () => {
             <div className="messanger-left">
                 <h3>Your Friends</h3>
             
-                {   onlineUser &&
+                {   onlineUser && user ?
                     user?.following.map((f)=>{
                         return (
                             <div onClick={()=>newConversation(f._id)}>
                                 <UserChat key={f._id} user={f} isOnline={onlineUser?.includes(f)}/>
                             </div>
                         )
-                    })
+                    }):<h5>Follow users to chat</h5>
                 }
             </div>
 
