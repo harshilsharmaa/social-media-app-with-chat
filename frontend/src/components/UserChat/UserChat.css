@@ -1,0 +1,53 @@
+.user-chat{
+    border-bottom: 1px solid rgba(172, 159, 159, 0.589);
+    padding: 5px;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.user-chat:hover{
+    background-color: #f5f5f5;
+    cursor: pointer;
+}
+
+.user-chat-image{
+    width: 30%;
+    position: relative;
+}
+
+.user-chat-name{
+    width: 40%;
+}
+
+img{
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+}
+
+.online-badge{
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    background-color: green;
+    box-shadow: 0 0 2px greenyellow;
+    border-radius: 100%;
+    top: 3px;
+    left: 28px;
+}
+
+.last-seen-box{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.last-seen{
+    font-size: 10px;
+    color: #8c8c8c;
+    display: flex;
+    flex-direction: column;
+}
