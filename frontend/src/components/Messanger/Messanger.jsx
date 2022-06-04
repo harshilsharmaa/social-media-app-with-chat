@@ -10,7 +10,7 @@ import io from 'socket.io-client'
 const socket = io.connect(process.env.REACT_APP_SOCKET_SERVER_URL);
 
 const Messanger = () => {
-    console.log(process.env.REACT_APP_SOCKET_SERVER_URL);
+    // console.log(process.env.REACT_APP_SOCKET_SERVER_URL);
 
     const { user, loading: userLoading, } = useSelector(state => state.user);
     const [currentChat, setCurrentChat] = useState(null); 
