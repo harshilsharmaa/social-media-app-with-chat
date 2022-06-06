@@ -22,7 +22,7 @@ const CommentCard = ({
     const dispatch = useDispatch();
 
     const deleteCommentHandler = async()=>{
-        await dispatch(deleteCommentOnPost(postId, commentId))
+        dispatch(deleteCommentOnPost(postId, commentId))
 
         if (isAccount) {
             dispatch(getMyPosts());

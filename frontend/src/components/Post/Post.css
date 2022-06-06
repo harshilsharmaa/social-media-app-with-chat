@@ -18,8 +18,11 @@
     color: rgba(0, 0, 0, 0.582);
   }
   
-  .post > img {
+  .postImg {
     width: 100%;
+    max-height: 20rem;
+    min-height: 15rem;
+    border-radius: none;
   }
   
   .postDetails {

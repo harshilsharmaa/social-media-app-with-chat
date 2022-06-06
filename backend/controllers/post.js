@@ -278,7 +278,7 @@ exports.deleteComment = async(req,res)=>{
 
         if(post.owner.toString() === req.user._id.toString()){
 
-            console.log(req.body.data.commentID);
+            console.log(req.body.commentID);
 
             if(req.body.commentID == undefined){
                 return res.status(400).json({

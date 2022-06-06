@@ -32,12 +32,12 @@ const Post = ({
 }) => {
 
     const [liked, setLiked] = useState(false);
+    const [likesCount, setLikesCount] = useState(likes.length)
     const [likesUser, setlikesUser] = useState(false);
     const [commentValue, setCommentValue] = useState("");
     const [commentToggle, setCommentToggle] = useState(false);
     const [captionValue, setCaptionValue] = useState("");
     const [captionToggle, setCaptionToggle] = useState(false);
-
     const dispatch = useDispatch();
     const { user } = useSelector(
         (state) => state.user
@@ -45,16 +45,11 @@ const Post = ({
 
 
     const handleLike = async () => {
-        setLiked(!liked);
-        await dispatch(likePost(postId));
-        // alert.success("Liked")
 
-        if (isAccount) {
-            dispatch(getMyPosts())
-        }
-        else {
-            dispatch(getFollowingPosts());
-        }
+        liked? setLikesCount(likesCount-1) : setLikesCount(likesCount+1);
+
+        setLiked(!liked);
+        dispatch(likePost(postId));
     }
 
     
@@ -113,7 +108,7 @@ const Post = ({
                 </Button> : null
             }
 
-            <img src={postImage} alt="Post" />
+            <img className="postImg" src={postImage} alt="Post" />
 
             <div className="postDetails">
 
@@ -127,7 +122,7 @@ const Post = ({
 
             </div>
             <button disabled={likes.length === 0 ? true : false} onClick={() => setlikesUser(!likesUser)} style={{ border: "none", backgroundColor: "white", cursor: "pointer", margin: "1vmax 2vmax" }}>
-                <Typography>{likes.length} Likes</Typography>
+                <Typography>{likesCount} Likes</Typography>
 
             </button>
 

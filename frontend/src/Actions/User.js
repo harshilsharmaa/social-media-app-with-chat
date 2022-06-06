@@ -342,6 +342,7 @@ export const getUserPosts = (id)=> async (dispatch) =>{
 export const getUserProfile = (id)=> async (dispatch) =>{
     try {
 
+
         dispatch({
             type:"userProfileRequest"
         });

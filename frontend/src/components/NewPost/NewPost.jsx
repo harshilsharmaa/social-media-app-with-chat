@@ -56,7 +56,7 @@ const NewPost = () => {
             <Typography variant="h3">New Post</Typography>
 
             {
-                image && <img src={image} alt="post" />
+                image && <img  src={image} alt="post" />
             }
             <input type="file" accept="image/*" onChange={handleImageChange}/>
             

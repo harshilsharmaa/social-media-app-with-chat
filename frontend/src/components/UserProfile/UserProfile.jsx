@@ -37,7 +37,7 @@ const UserProfile = () => {
     const followHandler = async () => {
         setFollowing(!following);
         await dispatch(followUser(params.id));
-        dispatch(getUserProfile());
+        dispatch(getUserProfile(params.id));
     }
 
 
@@ -127,6 +127,7 @@ const UserProfile = () => {
                     {
                         user && (
                             <>
+                            
                                 <Avatar src={user.avatar.url}
 
                                     sx={{ height: "8vmax", width: "8vmax" }}
@@ -138,6 +139,7 @@ const UserProfile = () => {
                                     <button onClick={() => setFollowersToggle(!followersToggle)}>
                                         <Typography>Followers</Typography>
                                     </button>
+                                   
                                     <Typography>{user.followers.length}</Typography>
                                 </div>
                                 <div>
